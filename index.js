@@ -5,8 +5,7 @@ const path = require("path");
 const readFile = require('util').promisify(fs.readFile);
 const BASE_URL = 'https://platform.hootsuite.com/v1/';
 const SOCIAL_PROFILE_ID = '135094030';
-const accessToken = '9RVLYFBZwriDYYIKjIjg6nrNAF9eWrs_RcLTjL9GVUc.q0970s3vlH0izhmeiwCR_3nw2dcR0BkEplkXGbfSvUk'
-
+const accessToken = process.env.TOKEN || '9RVLYFBZwriDYYIKjIjg6nrNAF9eWrs_RcLTjL9GVUc.q0970s3vlH0izhmeiwCR_3nw2dcR0BkEplkXGbfSvUk';
 
 const getUploadUrl = async () => {
   const response = await axios.post(`${BASE_URL}media`, {
